@@ -1,0 +1,6 @@
+<nav class="navbar" [ngClass]="mode ? 'dark' : ''">
+  <h2>Where in the world?</h2>
+  <p (click)="modeChange()">
+    {{ mode ? "Dark Mode" : "Light Mode" }}
+  </p>
+</nav>

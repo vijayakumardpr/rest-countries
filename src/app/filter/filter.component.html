@@ -1,0 +1,28 @@
+<!-- <mat-form-field appearance="fill">
+  <mat-label>Filter by Region</mat-label>
+  <mat-select>
+    <mat-option
+      *ngFor="let nameOfRegion of continents"
+      [value]="nameOfRegion.region"
+    >
+      {{ nameOfRegion.region }}
+    </mat-option>
+  </mat-select>
+</mat-form-field> -->
+
+<mat-form-field appearance="outline">
+  <mat-select
+    [(ngModel)]="selectedRegion"
+    (ngModelChange)="onFoodSelection2()"
+    [ngClass]="mode ? 'dark' : ''"
+  >
+    <mat-option value="">Filter by Region</mat-option>
+    <mat-option
+      *ngFor="let nameOfRegion of continents"
+      [value]="nameOfRegion.region"
+      [ngClass]="mode ? 'dark' : ''"
+    >
+      {{ nameOfRegion.region }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

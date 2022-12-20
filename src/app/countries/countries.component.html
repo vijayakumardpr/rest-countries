@@ -1,0 +1,36 @@
+<div class="filter-search" [ngClass]="mode ? 'bgDark' : ''">
+  <app-search (fromChildToParent1)="fromChild($event)"></app-search>
+  <app-filter (fromChildToParent2)="getFilterValue($event)"></app-filter>
+</div>
+
+<div class="country-container" [ngClass]="mode ? 'bgDark' : ''">
+  <ng-container *ngFor="let country of getCountry$ | async">
+    <ng-container
+      *ngIf="
+        filterValue === '' ||
+        country.region.toLowerCase() === filterValue.toLowerCase()
+      "
+    >
+      <!-- (click)="selectedCountry(country)" -->
+      <div
+        [ngClass]="mode ? 'dark' : ''"
+        class="country"
+        (click)="selectedCountry(country)"
+        routerLink="/country/{{ country.name.common.toLowerCase() }}"
+        *ngIf="country.name.common.toLowerCase().includes(value)"
+      >
+        <img
+          class="flags"
+          src="{{ country.flags.png }}"
+          alt="{{ country.name.common }}"
+        />
+        <div class="country-details">
+          <h3>{{ country.name.common }}</h3>
+          <div>Population: {{ country.population }}</div>
+          <div>Region: {{ country.region }}</div>
+          <div>Capital: {{ country.capital }}</div>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

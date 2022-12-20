@@ -1,0 +1,34 @@
+<div class="light" [ngClass]="mode ? 'bgDark' : ''">
+  <button class="backButton" [ngClass]="mode ? 'dark' : ''" routerLink="/home">
+    &#x27F5;Back
+  </button>
+
+  <div class="selected-country-details">
+    <img
+      class="selected-flag"
+      src="{{ country?.flags?.png }}"
+      alt="{{ country?.name?.common }}"
+    />
+    <h3>{{ country?.name?.common }}</h3>
+    <div>
+      <p>Navtive Name:{{ country?.name?.official }}</p>
+      <p>Population:{{ country?.population }}</p>
+      <p>Region:{{ country?.region }}</p>
+      <p>Sub Region:{{ country?.subregion }}</p>
+      <p>Capital:{{ country?.capital }}</p>
+    </div>
+    <div>
+      <p>Top Level Domain:{{ country?.tld }}</p>
+      <p>Currencies:{{ country?.currencies }}</p>
+      <p>Language:{{ country?.language }}</p>
+    </div>
+    <div>
+      <h3>Border Countries</h3>
+      <div class="border-country">
+        <button *ngFor="let border of country?.borders">
+          {{ border }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

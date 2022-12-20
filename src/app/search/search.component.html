@@ -1,0 +1,7 @@
+<input
+  [ngClass]="mode ? 'dark' : ''"
+  type="text"
+  placeholder="Search for a country"
+  (input)="getSearch($event)"
+/>
+{{ search }}

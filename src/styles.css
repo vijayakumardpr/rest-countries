@@ -1,1 +1,140 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --dark-blue: hsl(209, 23%, 22%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --very-dark-blue: hsl(207, 26%, 17%);
+  --very-deep-dark-blue: hsl(200, 15%, 8%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.navbar {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.navbar > h2 {
+  margin: 0;
+}
+
+input {
+  width: 100%;
+  height: 42px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  margin: 0 auto;
+}
+/* Countries */
+
+.filter-search {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: var(--very-light-gray);
+}
+
+.bgDark {
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+}
+
+.country-container {
+  background-color: var(--very-light-gray);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
+  /* grid-template-columns: 350px; */
+  place-content: center;
+  gap: 2rem;
+  border-radius: 15px;
+}
+
+.country {
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.flags {
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  width: 100%;
+  height: 50%;
+}
+
+.country-details {
+  padding: 1rem;
+}
+
+.country-details > div {
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+
+/* Country */
+
+.light {
+  background-color: var(--very-light-gray);
+}
+/*Duplicate*/
+
+.backButton {
+  margin: 24px 0 0 24px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: var(--white);
+  padding: 0.35em 1em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.2em;
+}
+
+.selected-flag {
+  width: 100%;
+}
+
+.selected-country-details {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.border-country {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.border-country > button {
+  cursor: pointer;
+}
+
+.bgDark {
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  border-radius: 0px;
+}
+
+.dark {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
